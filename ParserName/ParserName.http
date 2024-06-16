@@ -1,0 +1,15 @@
+@ParserName_HostAddress = https://localhost:7023
+
+GET {{ParserName_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
+
+POST {{ParserName_HostAddress}}/api/parsename/parse-name
+Content-Type: application/json
+
+{
+  Mr. Karthick Raj Sampath Kumar
+}
+
+###
