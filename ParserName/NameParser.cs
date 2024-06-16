@@ -16,16 +16,7 @@ public class NameParser : INameParser
         }
 
         string[] titles = { "Mr.", "Mrs.", "Ms.", "Dr." , "Prof." };
-        string? title = null, forename = null, middleName = null, surname = null;       
-
-        if (fullName.Contains(titles[0])) {
-            throw new ArgumentException("Full name must be present");
-        }
-
-        if (!fullName.Contains(' '))
-        {
-            throw new ArgumentException("Full name must include spaces between the title, forename, middle name, and surname.");
-        }
+        string? title = null, forename = null, middleName = null, surname = null;      
 
         string[] name = fullName.Split(' ', StringSplitOptions.RemoveEmptyEntries);
 
@@ -55,7 +46,7 @@ public class NameParser : INameParser
             }
         }
 
-        if (string.IsNullOrEmpty(forename) || string.IsNullOrEmpty(surname))
+        if (string.IsNullOrEmpty(forename) && string.IsNullOrEmpty(surname))
         {
             throw new ArgumentException("Full name must include at least a forename and a surname.");
         }

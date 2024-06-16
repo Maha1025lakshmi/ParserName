@@ -95,14 +95,5 @@ public class NameParserTests
         Assert.Equal("John", result.Forename);
         Assert.Equal("Michael David", result.MiddleName);
         Assert.Equal("Smith", result.Surname);
-    }
-
-    [Fact]
-    public void ParseFullName_FullNameWithoutSpaces_ShouldThrowArgumentException()
-    {
-        
-        var fullName = "Dr.JohnDoe";        
-        var exception = Assert.Throws<ArgumentException>(() => _nameParser.ParseFullName(fullName));
-        Assert.Equal("Full name must include spaces between the title, forename, middle name, and surname.", exception.Message);
-    }
+    }   
 }

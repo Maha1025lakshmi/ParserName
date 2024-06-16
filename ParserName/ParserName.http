@@ -9,7 +9,7 @@ POST {{ParserName_HostAddress}}/api/parsename/parse-name
 Content-Type: application/json
 
 {
-  Mr. Karthick Raj Sampath Kumar
+  //Full NameRequest
 }
 
 ###
