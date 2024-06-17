@@ -1,24 +1,29 @@
-Running the Application:
+Overview : The NameParser API is a service that parses full names into their respective components: title, forename, middle name, and surname. It validates the input to ensure it is well-formed and contains valid characters.
 
-Run the application. The Web API should be hosted, typically on https://localhost:7023.
+Project Structure
+NameParser.cs: Contains the logic for parsing full names.
+Program.cs: Sets up the web application and dependency injection.
+ParseNameController.cs: Defines the API endpoint for parsing names.
 
-Testing the API:
+Code Explanation
+NameParser Class
+The NameParser class implements the INameParser interface and provides the ParseFullName method to break down a full name into its components.
 
-The default Web API Swagger intergarted with ASP.Net Core provides a way to automatically generate interactive API documentation from the code annotations and route definitions.
+Web API Configuration
+The Program.cs file sets up the web application and configures the services, including Swagger for API documentation and testing.
 
-When the code is been run from visual studio the POST request sent to the Swagger with the port  https://localhost:7023/api/ParseName/parse-name. 
+API Controller
+The ParseNameController handles the incoming HTTP requests to parse the full name.
 
-Find the Endpoint: Locate the POST api/ParseName/parse-name endpoint.
+Testing the API with Swagger
+Swagger is integrated into the project for easy testing and documentation of the API.
 
-Click "Try it out": Enable the input field for the request body.
-
-Enter JSON Data: Input the JSON representation of the 'full name' object.
-
-Click "Execute": Send the request to the API.
-
-View the Response: Observe the status code and the returned data.
-
-
+Run the Project: Start the application (usually by running dotnet run).
+Test the Endpoint: https://localhost:7023/api/ParseName/parse-name.
+Click on the ParseName endpoint.
+Click Try it out.
+Enter a JSON object with the FullName property.
+Click Execute to see the parsed name components.
 
 
 
