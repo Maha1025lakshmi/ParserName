@@ -34,7 +34,7 @@ public class NameParserTests
     }
 
     [Fact]
-    public void ParseFullName_MissingForenameOrSurname_ThrowsArgumentException()
+    public void ParseFullName_MissingForenameandSurname_ThrowsArgumentException()
     {
         Assert.Throws<ArgumentException>(() => _nameParser.ParseFullName("John"));
         Assert.Throws<ArgumentException>(() => _nameParser.ParseFullName("Doe"));
@@ -52,21 +52,7 @@ public class NameParserTests
     {
         Assert.Throws<ArgumentException>(() => _nameParser.ParseFullName("Dr."));
         Assert.Throws<ArgumentException>(() => _nameParser.ParseFullName("Mr."));
-    }
-
-    [Fact]
-    public void ParseFullName_NoForename_ThrowsArgumentException()
-    {
-        Assert.Throws<ArgumentException>(() => _nameParser.ParseFullName("Doe"));
-        Assert.Throws<ArgumentException>(() => _nameParser.ParseFullName("Dr. Doe"));
-    }
-
-    [Fact]
-    public void ParseFullName_NoSurname_ThrowsArgumentException()
-    {
-        Assert.Throws<ArgumentException>(() => _nameParser.ParseFullName("John"));
-        Assert.Throws<ArgumentException>(() => _nameParser.ParseFullName("Dr. John"));
-    }
+    }    
 
     [Fact]
     public void ParseFullName_NonNameCharacters_ThrowsArgumentException()
